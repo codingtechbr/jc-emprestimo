@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>JC Empréstimos - Painel</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+     body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+  }
+  
+  .header {
+    text-align: center;
+    margin-bottom: 30px;
+    width: 100%;
+  }
+  
+  h1 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+  }
+  
+  .subtitle {
+    color: #7f8c8d;
+    margin-bottom: 30px;
+  }
+  
+  .dashboard-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 400px; /* Largura máxima para mobile */
+  }
+  
+  /* Layout para telas maiores */
+  @media (min-width: 768px) {
+    .dashboard-container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      max-width: 800px;
+    }
+  }
+  
+  /* Layout para telas ainda maiores */
+  @media (min-width: 1200px) {
+    .dashboard-container {
+      grid-template-columns: repeat(4, 1fr);
+      max-width: 1200px;
+    }
+  }
+  
+  .card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    padding: 25px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    box-sizing: border-box;
+   text-decoration: none;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  }
+  
+  .card i {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: #3498db;
+  }
+  
+  .card h2 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+  }
+  
+  .card p {
+    color: #7f8c8d;
+    margin-bottom: 15px;
+   
+  }
+   
+  .btn {
+    display: inline-block;
+    background: #3498db;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s;
+  }
+  
+  .btn:hover {
+    background: #2980b9;
+  }
+  
+  .admin-link {
+    margin-top: 40px;
+    text-align: center;
+  }
+  
+  .admin-link a {
+    color: #e74c3c;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .admin-link a:hover {
+    text-decoration: underline;
+  }
+  
+  .logo-container {
+    text-align: center;
+    margin: 20px 0;
+    padding: 10px;
+  }
+  
+  .logo-image {
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+  </style>
+</head>
+<body>
+  <div class="header">
+   <div class="logo-container">
+  <img 
+    src="imagens/LOGO JC EMPRÉSTIMOS.png" 
+    alt="Logo JC Empréstimos" 
+    class="logo-image"
+  >
+
+    <p class="subtitle">Sistema de gerenciamento de contratos</p>
+  </div>
+  
+  <div class="dashboard-container">
+    <a href="inss.html" class="card">
+      <i class="fas fa-user-tie"></i>
+      <h2>Cadastro INSS</h2>
+      <p>Gerencie os contratos de empréstimos consignados para aposentados e pensionistas</p>
+      <span class="btn">Acessar</span>
+    </a>
+    
+    <a href="fgts.html" class="card">
+      <i class="fas fa-file-invoice-dollar"></i>
+      <h2>Cadastro FGTS/CLT</h2>
+      <p>Controle os empréstimos vinculados ao FGTS para trabalhadores formais</p>
+      <span class="btn">Acessar</span>
+    </a>
+    
+    <a href="protecao.html" class="card">
+      <i class="fas fa-car"></i>
+      <h2>Proteção Veicular</h2>
+      <p>Administre os planos de proteção veicular dos clientes</p>
+      <span class="btn">Acessar</span>
+    </a>
+    
+    <a href="painel.html" class="card">
+      <i class="fas fa-chart-line"></i>
+      <h2>Painel de Gráficos</h2>
+      <p>Visualize dados e métricas importantes em tempo real</p>
+      <span class="btn">Acessar</span>
+    </a>
+  </div>
+  
+  <div class="admin-link">
+    <a href="login.html"><i class="fas fa-lock"></i> Área Administrativa</a>
+  </div>
+</body>
+</html>

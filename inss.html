@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cadastro INSS</title>
+  <link rel="stylesheet" href="css/style.css" />
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <a href="index.html" class="back-button">← Voltar</a>
+     <div class="logo-container">
+  <img 
+    src="imagens/LOGO JC EMPRÉSTIMOS.png" 
+    alt="Logo JC Empréstimos" 
+    class="logo-image"
+  ></div>
+    <h2>Cadastro INSS</h2>
+
+    <button id="mostrar-form" class="toggle-form-btn">Cadastrar Cliente</button>
+
+    <form id="inss-form" style="display: none;">
+      <input type="text" id="nome" placeholder="Nome" required />
+      <input type="text" id="cpf" placeholder="CPF" required />
+      <input type="date" id="dataOperacao" required />
+      <input type="text" id="banco" placeholder="Banco" required />
+      <input type="text" id="promotor" placeholder="Promotor" required />
+      <input type="text" id="vendedor" placeholder="Vendedor" required />
+      <input type="number" id="valorContrato" placeholder="R$ Contrato" step="0.01" required />
+      <input type="number" id="comissao" placeholder="Comissão" step="0.01" required />
+      <input type="text" id="status" placeholder="Status" required />
+      <button type="submit">Cadastrar</button>
+    </form>
+
+    <button id="exportar-excel" class="export-btn">📊 Exportar Excel</button>
+
+    <h3>Registros</h3>
+    <div class="table-container">
+      <table>
+       <thead>
+  <tr>
+    <th data-coluna="nome">Nome</th>
+    <th data-coluna="cpf">CPF</th>
+    <th data-coluna="dataOperacao">Data</th>
+    <th data-coluna="banco">Banco</th>
+    <th data-coluna="promotor">Promotor</th>
+    <th data-coluna="vendedor">Vendedor</th>
+    <th data-coluna="valorContrato">Contrato (R$)</th>
+    <th data-coluna="comissao">Comissão (R$)</th>
+    <th data-coluna="status">Status</th>
+  </tr>
+</thead>
+        <tbody id="tabela-inss"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Firebase + Scripts -->
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
+
+  <script src="js/firebase.js"></script>
+  <script src="js/script-inss.js"></script>
+</body>
+</html>

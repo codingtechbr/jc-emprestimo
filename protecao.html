@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Proteção Veicular</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="container">
+    <a href="index.html" class="back-button">← Voltar</a>
+     <div class="logo-container">
+  <img 
+    src="imagens/LOGO JC EMPRÉSTIMOS.png" 
+    alt="Logo JC Empréstimos" 
+    class="logo-image"
+  ></div>
+    <h2>🚗 Proteção Veicular</h2>
+
+    <button id="mostrar-form" class="toggle-form-btn">🚗 Cadastrar Veículo</button>
+
+    <form id="protecao-form" style="display: none;">
+      <input type="text" id="nome" placeholder="Nome" required />
+      <input type="text" id="cpf" placeholder="CPF" required />
+      <input type="text" id="placa" placeholder="Placa (ABC-1234)" required />
+      <input type="text" id="modelo" placeholder="Modelo do Veículo" required />
+      <input type="text" id="telefone" placeholder="Telefone" required />
+      <select id="status" required>
+        <option value="">Selecione...</option>
+        <option value="Ativo">Ativo</option>
+        <option value="Vencido">Vencido</option>
+        <option value="Cancelado">Cancelado</option>
+      </select>
+      <button type="submit">Cadastrar</button>
+    </form>
+
+    <button id="exportar-excel" class="export-btn">📊 Exportar Excel</button>
+
+    <h3>Registros</h3>
+    <div class="table-container">
+      <table>
+        <thead>
+  <tr>
+    <th data-coluna="nome">Nome</th>
+    <th data-coluna="cpf">CPF</th>
+    <th data-coluna="placa">Placa</th>
+    <th data-coluna="modelo">Modelo</th>
+    <th data-coluna="telefone">Telefone</th>
+    <th data-coluna="status">Status</th>
+  </tr>
+</thead>
+        <tbody id="tabela-protecao"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Firebase + Scripts -->
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
+
+  <script src="js/firebase.js"></script>
+  <script src="js/script-protecao.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+</body>
+</html>
